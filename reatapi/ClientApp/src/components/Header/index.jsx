@@ -13,7 +13,7 @@ export default function Headers() {
         <Header>
             <Link to='/'>
                 <HeaderLogo>
-                    <Sainsburys className="header__logo" style={{ verticalAlign: 'middle', height: '24px' }} /> &nbsp; Lease Events
+                    <Sainsburys className="header__logo" style={{ verticalAlign: 'middle', height: '24px' }} /> &nbsp; Shrink Reporting App
           <span className="ln-u-visually-hidden">Sainsbury's</span>
                 </HeaderLogo>
             </Link>
