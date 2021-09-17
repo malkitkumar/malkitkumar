@@ -98,10 +98,21 @@ const ReportShrink = () => {
                             screenshotFormat="image/jpeg"
                             width={500}
                             videoConstraints={options}
-                            />
+                            />   
                     </div>
                     <FilledButton onClick={capture} className="ln-c-button--full ln-u-margin-bottom">Capture photo</FilledButton>
-                    <OutlinedButton onClick={() => setIsTakingPictures(false)} className="ln-c-button--full">Done</OutlinedButton>
+                    {imageSrc.length > 0 &&
+                                <div>
+                                {
+                                    (imageSrc).map(item => (
+                                        <span>
+                                            <img src={item} style={{ width: '125px', height: '125px', margin:'5px' }} alt="failed capturing photo" />                                    
+                                        </span>
+                                    ))
+                                }
+                            </div>
+                            }
+                    <OutlinedButton onClick={() => setIsTakingPictures(false)} className="ln-c-button--full ln-u-margin-top">Done</OutlinedButton>
                     </>
                 }
             </Card>
