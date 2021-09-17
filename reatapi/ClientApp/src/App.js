@@ -16,7 +16,7 @@ export default function App() {
             <Route exact path='/' component={Home} />
             <Route exact path='/Depot' component={Depot} />
             <Route exact path='/Scan' component={Scan} />
-            <Route exact path='/Details/:id' component={Details} />
+            <Route exact path='/Details/:id/:isDepot' component={Details} />
             
             <Route exact path='/image/:barcode' component={CaptureImage} />
         </>

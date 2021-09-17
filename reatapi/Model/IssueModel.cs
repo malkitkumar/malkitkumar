@@ -16,6 +16,7 @@ namespace reatapi.Model
         public string ProductName { get; set; }
         public string Store { get; set; }
         public string ReportedDate { get; set; }
+        public bool IsDepot { get; set; }
     }
 
     public static class SessionExtensions

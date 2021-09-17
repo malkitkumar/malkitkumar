@@ -41,7 +41,7 @@ const Depot = () => {
   
     const viewDetails = (item) => {
        
-        history.push("/details/" + item.eanNumber + "");
+        history.push("/details/" + item.eanNumber + "/"+true);
     }
 
     useEffect(() => {

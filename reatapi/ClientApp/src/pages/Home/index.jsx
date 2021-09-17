@@ -41,7 +41,7 @@ const Home = () => {
   
     const viewDetails = (item) => {
        
-        history.push("/details/" + item.eanNumber + "");
+        history.push("/details/" + item.eanNumber + "/"+false);
     }
     const ViewDashboard = (item) => {
 

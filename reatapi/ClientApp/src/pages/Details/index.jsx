@@ -13,11 +13,10 @@ const Details = () => {
     const [data, setData] = useState([]);
     const [validate, setValidate] = useState(false);
     const history = useHistory();
-    const { id } = useParams();
+    const { id, isDepot } = useParams();
     const loadblob = () => {
 
-
-        fetch(window.location.origin + '/api/issue/'+id, {
+        fetch(window.location.origin + '/api/issue/GetDetails/' + id + "/" + isDepot, {
             method: 'GET',
 
         }).then(response => response.json())
@@ -57,7 +56,8 @@ const Details = () => {
             <Card className="ln-c-card ln-c-card--soft" >
                 {validate ? <div className={style.rrsuccessalert}>The Shrink issue has been reported to depot successfully</div> : <></>
                 }
-                <div class="style_topbar__1FknK ln-u-margin-bottom" style={{ backgroundColor: "#f06c00", color: "white", height: "30px", padding: "5px", fontFamily: "MaryAnn, Trebuchet MS, Arial, Helvetica, sans-serif" }}><h5>Shrink details for {data.eanNumber}</h5></div>
+                <div class="style_topbar__1FknK ln-u-margin-bottom" style={{ backgroundColor: "#f06c00", color: "white", height: "30px", padding: "5px", fontFamily: "MaryAnn, Trebuchet MS, Arial, Helvetica, sans-serif" }}>
+                    <h5>Shrink details for {data.eanNumber}</h5></div>
 
 
                 <div className="ln-c-table-container">
@@ -103,8 +103,8 @@ const Details = () => {
                     </table></div>
             </Card>
 
-
-            <OutlinedButton onClick={() => ValidateClick()}> Validate & Report to Depot</OutlinedButton>
+            {data.isDepot ? <></> :<OutlinedButton onClick={() => ValidateClick()}> Validate & Report to Depot</OutlinedButton>
+                }
         </Page>
     );
 };
