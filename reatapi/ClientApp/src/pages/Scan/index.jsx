@@ -49,7 +49,7 @@ const Scan = () => {
 
     return (
         <Page>
-                <Card className="ln-u-border">
+                <Card className="ln-u-border" style={{maxWidth: "34.75rem", margin:"0 auto"}}>
                     {!checkCompleted &&
                     <>
                     <FormGroup name="scan">

@@ -9,7 +9,7 @@ export default function Pages({children}) {
     return(
         <Page className={styles.page}>
             <PageBody >
-                <Container  style={{maxWidth: "34.75rem"}}>
+                <Container >
                     {children}
                 </Container>
             </PageBody>

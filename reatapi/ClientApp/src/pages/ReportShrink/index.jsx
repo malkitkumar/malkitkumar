@@ -38,7 +38,7 @@ const ReportShrink = () => {
 
     return (
         <Page>
-            <Card className="ln-u-border">
+            <Card className="ln-u-border" style={{maxWidth: "34.75rem", margin:"0 auto"}}>
 
                 {!isTakingPictures ? 
                     <>
@@ -84,7 +84,7 @@ const ReportShrink = () => {
                                 }
                             </div>
                             }
-                            <FilledButton onClick={() => submit()} className="ln-c-button--full ln-u-margin-top">Submit</FilledButton>
+                            <FilledButton onClick={(e) => submit(e)} className="ln-c-button--full ln-u-margin-top">Submit</FilledButton>
                             </>
                         }
                     </>

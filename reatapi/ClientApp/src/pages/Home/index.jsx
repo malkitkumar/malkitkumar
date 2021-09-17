@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Page from '../../components/Page';
-import { FilledButton } from '@jsluna/button';
+import { FilledButton, OutlinedButton } from '@jsluna/button';
 import { useHistory } from 'react-router-dom';
 
 
@@ -85,7 +85,7 @@ const Home = () => {
                                 ))}</tbody>
                     </table></div>
             </Card>
-            <FilledButton onClick={() => history.push("/scan")} className="ln-c-button--full"> Report New Issue </FilledButton>
+            <FilledButton onClick={() => history.push("/scan")} > Report New Issue </FilledButton>
             <OutlinedButton style={{ float: "right" }} onClick={() => ViewDashboard()}> Depot Dashboard View </OutlinedButton>
         </Page>
     );
