@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Page from '../../components/Page';
-import { OutlinedButton } from '@jsluna/button';
+import { FilledButton } from '@jsluna/button';
 import { useHistory } from 'react-router-dom';
 
 
@@ -75,9 +75,7 @@ const Home = () => {
                                 ))}</tbody>
                     </table></div>
             </Card>
-
-
-                <OutlinedButton> Report New Issue </OutlinedButton>
+            <FilledButton onClick={() => history.push("/scan")} className="ln-c-button--full"> Report New Issue </FilledButton>
         </Page>
     );
 };

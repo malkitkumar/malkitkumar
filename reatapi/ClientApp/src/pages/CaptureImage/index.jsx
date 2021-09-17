@@ -56,7 +56,7 @@ const CaptureImage = () => {
                         {
                             (imageSrc).map(item => (
                                 <span>
-                                    <img src={item} style={{ width: '250px', height: '250px', margin:'5px' }} alt="failed capturing photo" />                                    
+                                    <img src={item} style={{ width: '125px', height: '125px', margin:'5px' }} alt="failed capturing photo" />                                    
                                 </span>
                             ))
                         }
