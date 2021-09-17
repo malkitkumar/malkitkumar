@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Page from '../../components/Page';
-import { FilledButton } from '@jsluna/button';
+import { OutlinedButton } from '@jsluna/button';
 import { useHistory } from 'react-router-dom';
 
 
@@ -9,14 +9,14 @@ import Card from '../../components/Card'
 import { GridWrapper, GridItem } from "@jsluna/grid";
 
 
-const Home = () => {
+const Depot = () => {
     const [data, setData] = useState([]);
     const history = useHistory();
    
     const loadblob = () => {
        
    
-            fetch(window.location.origin + '/api/issue', {
+        fetch(window.location.origin + '/api/Issue/GetDepotDashboard', {
                 method: 'GET',
      
             }).then(response => response.json())
@@ -41,13 +41,9 @@ const Home = () => {
   
     const viewDetails = (item) => {
        
-        history.push("/details/" + item.eanNumber + "/"+false);
+        history.push("/details/" + item.eanNumber + "/"+true);
     }
-    const ViewDashboard = (item) => {
 
-        history.push("/depot/");
-    }
-    
     useEffect(() => {
         loadblob();
     }, []);
@@ -61,6 +57,7 @@ const Home = () => {
                     <table className="ln-c-table">
                         <thead className="ln-c-table__header">
                             <tr className="ln-c-table__row ln-c-table__header-row">
+                                <th className="ln-c-table__header-cell ln-c-table__header-cell--text-align-left" >Store Name</th>
                                 <th className="ln-c-table__header-cell ln-c-table__header-cell--text-align-left" >Product Name</th>
                                 <th className="ln-c-table__header-cell ln-c-table__header-cell--text-align-left">EAN Number</th>
                             
@@ -74,9 +71,9 @@ const Home = () => {
                                 data.map((item, index) => (
 
                                     <tr className="ln-c-table__row" onClick={() => viewDetails(item)} style={{ cursor: "pointer" }}>
+                                        <td className="customCol ln-c-table__cell ln-c-table__cell--text-align-left"  >{item.store}</td>
                                         <td className="customCol ln-c-table__cell ln-c-table__cell--text-align-left"  >{item.productName}</td>
-                                        <td className="customCol ln-c-table__cell ln-c-table__cell--text-align-left"  >{item.eanNumber}</td>
-                                    
+                                        <td className="customCol ln-c-table__cell ln-c-table__cell--text-align-left"  >{item.eanNumber}</td>                                    
                                         <td className="customCol ln-c-table__cell ln-c-table__cell--text-align-center"  >{item.expectedNumber}</td>
                                         <td className="customCol ln-c-table__cell ln-c-table__cell--text-align-center"  >{item.actualNumber}</td>
                                         <td className="customCol ln-c-table__cell ln-c-table__cell--text-align-center"  >{item.reportedDate}</td>
@@ -85,10 +82,10 @@ const Home = () => {
                                 ))}</tbody>
                     </table></div>
             </Card>
-            <FilledButton onClick={() => history.push("/scan")} className="ln-c-button--full"> Report New Issue </FilledButton>
-            <OutlinedButton style={{ float: "right" }} onClick={() => ViewDashboard()}> Depot Dashboard View </OutlinedButton>
+
+
         </Page>
     );
 };
 
-export default Home;
+export default Depot;
