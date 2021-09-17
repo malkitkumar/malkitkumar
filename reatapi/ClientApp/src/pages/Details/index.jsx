@@ -55,7 +55,7 @@ const Details = () => {
     return (
         <Page>
             <Card className="ln-c-card ln-c-card--soft" >
-                {validate ? <div style={style.rrsuccessalert}>The Shrink issue has been reported to depot successfully</div> : <></>
+                {validate ? <div className={style.rrsuccessalert}>The Shrink issue has been reported to depot successfully</div> : <></>
                 }
                 <div class="style_topbar__1FknK ln-u-margin-bottom" style={{ backgroundColor: "#f06c00", color: "white", height: "30px", padding: "5px", fontFamily: "MaryAnn, Trebuchet MS, Arial, Helvetica, sans-serif" }}><h5>Shrink details for {data.eanNumber}</h5></div>
 
@@ -67,7 +67,14 @@ const Details = () => {
                             {
                               
 
-                                    <><tr className="ln-c-table__row">
+                                <>
+                                    {
+                                        data.store ? <tr className="ln-c-table__row">
+                                            <td className="ln-c-table__header-cell ln-c-table__header-cell--text-align-left" style={{ width: "20%" }}><b> Store </b></td>
+                                            <td className="customCol ln-c-table__cell ln-c-table__cell--text-align-left" style={{ width: "20%" }}>{data.store}</td></tr>
+                                            : <></>
+                                    }
+                                    <tr className="ln-c-table__row">
                                     <td className="ln-c-table__header-cell ln-c-table__header-cell--text-align-left" style={{ width: "20%" }}><b> Product Name </b></td>
                                     <td className="customCol ln-c-table__cell ln-c-table__cell--text-align-left" style={{ width: "20%" }}>{data.productName}</td>
                                     <td></td>
